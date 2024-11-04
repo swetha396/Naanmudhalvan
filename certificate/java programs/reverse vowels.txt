@@ -1,0 +1,41 @@
+import java.util.Scanner;
+public class Main{
+ String reversevowel(String str)
+ {
+     char arr[]=str.toCharArray();
+     for(int i=0,j=str.length()-1;i<j;)
+     {
+         if(isvowel(arr[i])!=1)
+         i++;
+         if(isvowel(arr[j])!=1)
+         j--;
+         if(isvowel(arr[i])==1&&isvowel(arr[j])==1)
+         {
+             char t=arr[i];
+             arr[i]=arr[j];
+             arr[j]=t;
+             i++;
+             j--;
+         }
+     }
+     String s="";
+     for (int i=0;i<arr.length;i++){
+         s+=arr[i];
+     }
+     return s;
+ }
+ int isvowel(char ch){
+     if((ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')||(ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U')){
+     return 1;
+     }
+return 0;
+}
+public static void main(String[]args){
+    Scanner scan=new Scanner(System.in);
+    Main obj=new Main();
+    String str=scan.nextLine();
+    
+    System.out.println(obj. reversevowel(str));
+    
+}
+}

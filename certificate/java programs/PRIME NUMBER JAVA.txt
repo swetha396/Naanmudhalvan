@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class Main
+{
+    int isprime (int a)
+    {
+        for(int i=2;i<=a-1;i++)
+        {
+            if(a%i==0)
+                return 0;
+        }
+    return 1;
+    }
+
+public static void main(String[]args)
+{
+    Scanner scan=new Scanner(System.in);
+    int start=scan.nextInt();
+    int stop=scan.nextInt();
+    Main obj=new Main();
+    for(int i=start;i<=stop;i++)
+    {
+    int result=obj.isprime(i);
+        if(result==0)
+            System.out.print(i+" ");
+        }
+}
+}
